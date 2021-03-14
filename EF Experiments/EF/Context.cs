@@ -10,10 +10,10 @@ namespace EF_Experiments.EF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(
-            //     "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = EFExperiments");
-            optionsBuilder.UseSqlite(
-               "Data Source=EfExperiments.db;Version=3;");
+            optionsBuilder.UseSqlServer(
+                 "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = EFExperiments");
+            //optionsBuilder.UseSqlite(
+            //   "Data Source=EfExperiments.db");
         }
 
     }
