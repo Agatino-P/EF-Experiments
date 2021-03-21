@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Database" Category="Database" Bounds="0,-30.8705882420001,537.293333333333,261.741176484" Group="Expanded" Label="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EFExperiments;Integrated Security=True" />
-    <Node Id="dbo" Category="Schema" Bounds="92.8283333333333,9.03999999999994,351.636666666667,201.92" Group="Expanded" Label="dbo" />
-    <Node Id="dbo.Quotes" Category="Table" Bounds="254.465,49.0399999999999,170,141.92" Group="Expanded" Label="dbo.Quotes" />
-    <Node Id="dbo.Quotes_Id" Category="Field Primary" Bounds="274.465,89.0399999999999,50,25.96" Description="int" Label="Id" />
-    <Node Id="dbo.Quotes_SamuraiId" Category="Field" Bounds="274.465,145,73.0533333333333,25.96" Description="int" Label="SamuraiId" />
-    <Node Id="dbo.Quotes_Text" Category="Field Optional" Bounds="354.465,89.0399999999999,50,25.96" Description="ntext" Label="Text" />
-    <Node Id="dbo.Samurais" Category="Table" Bounds="112.828333333333,49.0399999999999,111.636666666667,141.92" Group="Expanded" Label="dbo.Samurais" />
-    <Node Id="dbo.Samurais_Id" Category="Field Primary" Bounds="142.798333333333,89.0399999999999,50,25.96" Description="int" Label="Id" />
-    <Node Id="dbo.Samurais_Name" Category="Field Optional" Bounds="142.798333333333,145,51.6966666666667,25.96" Description="ntext" Label="Name" />
+    <Node Id="Database" Category="Database" Bounds="-1.13686837721616E-13,-116.9199500001,537.293333333333,433.84" Group="Expanded" Label="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=EFExperiments;Integrated Security=True" />
+    <Node Id="dbo" Category="Schema" Bounds="163.646666666667,-76.9199500001001,210,373.84" Group="Expanded" Label="dbo" />
+    <Node Id="dbo.Quotes" Category="Table" Bounds="183.646666666667,-36.9199500001001,170,141.92" Group="Expanded" Label="dbo.Quotes" />
+    <Node Id="dbo.Quotes_Id" Category="Field Primary" Bounds="203.646666666667,3.08004999989987,50,25.96" Description="int" Label="Id" />
+    <Node Id="dbo.Quotes_SamuraiId" Category="Field Foreign" Bounds="203.646666666667,59.0400499998999,73.0533333333333,25.96" Description="int" Label="SamuraiId" />
+    <Node Id="dbo.Quotes_Text" Category="Field Optional" Bounds="283.646666666667,3.08004999989987,50,25.96" Description="ntext" Label="Text" />
+    <Node Id="dbo.Samurais" Category="Table" Bounds="212.828333333333,135.0000499999,111.636666666667,141.92" Group="Expanded" Label="dbo.Samurais" />
+    <Node Id="dbo.Samurais_Id" Category="Field Primary" Bounds="242.798333333333,175.0000499999,50,25.96" Description="int" Label="Id" />
+    <Node Id="dbo.Samurais_Name" Category="Field Optional" Bounds="242.798333333333,230.9600499999,51.6966666666667,25.96" Description="ntext" Label="Name" />
   </Nodes>
   <Links>
     <Link Source="Database" Target="dbo" Category="Contains" />
@@ -18,15 +18,17 @@
     <Link Source="dbo.Quotes" Target="dbo.Quotes_Id" Category="Contains" />
     <Link Source="dbo.Quotes" Target="dbo.Quotes_SamuraiId" Category="Contains" />
     <Link Source="dbo.Quotes" Target="dbo.Quotes_Text" Category="Contains" />
+    <Link Source="dbo.Quotes_SamuraiId" Target="dbo.Samurais_Id" Category="Foreign Key" Label="FK_Quotes_Samurais_SamuraiId" />
     <Link Source="dbo.Samurais" Target="dbo.Samurais_Id" Category="Contains" />
     <Link Source="dbo.Samurais" Target="dbo.Samurais_Name" Category="Contains" />
   </Links>
   <Categories>
     <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
     <Category Id="Database" />
-    <Category Id="Field" />
+    <Category Id="Field Foreign" />
     <Category Id="Field Optional" />
     <Category Id="Field Primary" />
+    <Category Id="Foreign Key" />
     <Category Id="Schema" />
     <Category Id="Table" />
   </Categories>

@@ -4,18 +4,14 @@
     {
         public int Id { get; private set; }
         public string Text { get; private set; }
-        public int SamuraiId { get; private set; }
         public Samurai Samurai { get; private set; }
-        protected Quote()
-        {
 
-        }
-
+        
+        private Quote() { } //EF
         public Quote(string text, Samurai samurai)
         {
             Text = text;
             Samurai = samurai;
-            SamuraiId = samurai.Id;
         }
     }
 }

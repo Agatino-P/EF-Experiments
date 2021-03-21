@@ -2,6 +2,7 @@
 using EF_Experiments.Model;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,20 @@ namespace EF_Experiments
         {
             Context context = new();
             context.Database.EnsureCreated();
-            Samurai s3 = new("Samurai 3");
-            //context.Samurais.Add(samurai1);
-            Quote q3 = new("Q3", s3);
-            context.Quotes.Add(q3);
-            //Quote quote1 = new("Quote1", samurai1.Id);
-            //context.Quotes.Add(quote1);
-            int a =context.SaveChanges();
+
+            //This works
+            //Samurai s3 = new("Samurai 3");
+            //Quote q3 = new("Q3", s3);
+            //s3.AddQuote(q3);
+            //s3.AddQuote("t4");
+            //context.Samurais.Add(s3);
+            //int a =context.SaveChanges();
+
+            //var samurai = context.Samurais.Include(s => s.Quotes).First();
+            var samurai = context.Samurais.First();
+
+            var stest = context.Samurais.Select(s =>new { Ident=s.Id,Nome=s.Name }).First();
+
             var ss = context.Samurais.ToList();
             var qs = context.Quotes.ToList();
         }

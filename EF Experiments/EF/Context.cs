@@ -15,6 +15,22 @@ namespace EF_Experiments.EF
             //optionsBuilder.UseSqlite(
             //   "Data Source=EfExperiments.db");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Quote>(q =>
+            {
+                q.HasKey(p => p.Id);
+                q.HasOne(p => p.Samurai);
+            });
+            
+            modelBuilder.Entity<Samurai>(s =>
+            {
+                s.HasKey(p => p.Id);
+                s.Navigation(s => s.Quotes).AutoInclude();
+            });
 
+            
+
+        }
     }
 }
