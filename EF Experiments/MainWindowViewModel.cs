@@ -35,12 +35,21 @@ namespace EF_Experiments
             //int a =context.SaveChanges();
 
             //var samurai = context.Samurais.Include(s => s.Quotes).First();
-            var samurai = context.Samurais.First();
+            //var samurai = context.Samurais.First();
 
-            var stest = context.Samurais.Select(s =>new { Ident=s.Id,Nome=s.Name }).First();
+            //var stest = context.Samurais.Select(s =>new { Ident=s.Id,Nome=s.Name }).First();
 
-            var ss = context.Samurais.ToList();
-            var qs = context.Quotes.ToList();
+
+            //Samurai s1 = new Samurai("s1");
+            //s1.AddQuote("q1-1");
+            //s1.AddQuote("q1-2");
+            //context.Samurais.Add(s1);
+            //context.SaveChanges();
+            //var samurai = context.Samurais.First();
+            //var samuraiw = context.Samurais.Include(s=>s.Quotes).Where(s => s.Id==samurai.Id).First();
+
+            //var ss = context.Samurais.ToList();
+            //var qs = context.Quotes.ToList();
         }
 
     }

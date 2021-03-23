@@ -26,7 +26,7 @@ namespace EF_Experiments.EF
             modelBuilder.Entity<Samurai>(s =>
             {
                 s.HasKey(p => p.Id);
-                s.Navigation(s => s.Quotes).AutoInclude();
+               // s.Navigation(s => s.Quotes).AutoInclude();
             });
 
             

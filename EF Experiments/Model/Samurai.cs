@@ -12,12 +12,12 @@ namespace EF_Experiments.Model
         private List<Quote> _quotes = new();
         public IReadOnlyList<Quote> Quotes => _quotes.ToList();
 
-        public void AddQuote(Quote quote)
-        {
-            if (quote == null)
-                return;
-            _quotes.Add(quote);
-        }
+        //public void AddQuote(Quote quote)
+        //{
+        //    if (quote == null)
+        //        return;
+        //    _quotes.Add(quote);
+        //}
 
         public void AddQuote(string text)
         {
